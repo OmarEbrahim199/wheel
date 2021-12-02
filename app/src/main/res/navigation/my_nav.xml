@@ -39,9 +39,6 @@
         <action
             android:id="@+id/action_gamelogic_to_recycalview"
             app:destination="@id/recycalview" />
-        <action
-            android:id="@+id/action_gamelogic_to_initializationActivity"
-            app:destination="@id/initializationActivity" />
     </fragment>
     <fragment
         android:id="@+id/recycalview"
@@ -51,9 +48,4 @@
             android:id="@+id/action_recycalview_to_gamelogic"
             app:destination="@id/gamelogic" />
     </fragment>
-    <activity
-        android:id="@+id/initializationActivity"
-        android:name="com.example.wheel.InitializationActivity"
-        android:label="initializationactivity"
-        tools:layout="@layout/initializationactivity" />
 </navigation>

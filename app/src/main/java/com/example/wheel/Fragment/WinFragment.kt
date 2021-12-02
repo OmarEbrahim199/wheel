@@ -17,10 +17,6 @@ class WinFragment : Fragment() {
     private var _bindding :FragmentWinBinding ?= null
     private val binding get() = _bindding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
