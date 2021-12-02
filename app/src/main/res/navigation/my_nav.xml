@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/gamelogic">
+
+    <fragment
+        android:id="@+id/lossFragmentt"
+        android:name="com.example.wheel.Fragment.LossFragment"
+        android:label="fragment_loss"
+        tools:layout="@layout/fragment_loss" >
+        <action
+            android:id="@+id/action_lossFragment_to_gamelogic"
+            app:destination="@id/gamelogic" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.example.wheel.Fragment.WinFragment"
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_win" >
+        <action
+            android:id="@+id/action_winFragment_to_gamelogic"
+            app:destination="@id/gamelogic" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gamelogic"
+        android:name="com.example.wheel.Fragment.Gamelogic"
+        android:label="gamelogic"
+        tools:layout="@layout/gamelogic" >
+        <action
+            android:id="@+id/action_gamelogic_to_winFragment"
+            app:destination="@id/winFragment" />
+        <action
+            android:id="@+id/action_gamelogic_to_lossFragment"
+            app:destination="@id/lossFragmentt" />
+        <action
+            android:id="@+id/action_gamelogic_to_recycalview"
+            app:destination="@id/recycalview" />
+        <action
+            android:id="@+id/action_gamelogic_to_initializationActivity"
+            app:destination="@id/initializationActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/recycalview"
+        android:name="com.example.wheel.Recycalview"
+        android:label="Recycalview" >
+        <action
+            android:id="@+id/action_recycalview_to_gamelogic"
+            app:destination="@id/gamelogic" />
+    </fragment>
+    <activity
+        android:id="@+id/initializationActivity"
+        android:name="com.example.wheel.InitializationActivity"
+        android:label="initializationactivity"
+        tools:layout="@layout/initializationactivity" />
+</navigation>
