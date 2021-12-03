@@ -25,17 +25,11 @@ class Gamelogic : Fragment() {
 
     private var _binding: GamelogicBinding? = null
     private val binding get() = _binding!!
-
-
-
-
     var mMediaPlayer: MediaPlayer? = null
     private val RANDOM = Random()  // We create a Random instance to make our wheel spin randomly
     private var handler = Handler()  //create a new Handler it is bound to a Looper . It will deliver messages and runnables to that Looper's message queue and execute
     private var degree = 0
     private  var degreeOld = 0
-    private var lives: Int = 5
-    private var score: Int = 0
 
 
     // We have 4 sectors on the wheel, we divide 360 by this value to have angle for each sector
@@ -67,8 +61,8 @@ class Gamelogic : Fragment() {
         super.onStart()
 
 
-        setLife(lives)
-        setScore(score)
+        setLife(5)
+        setScore(0)
         updateScoreAndLives()
         getARandomWord()
        binding.wordToBeGuessed.text = hiddenWord()
@@ -172,17 +166,19 @@ class Gamelogic : Fragment() {
                 //letter
                 Toast.makeText(activity, "You loses a life, and you not able to choose a letter", LENGTH_SHORT).show()
                 // minusLife()
-                setLife(getLife()-1)
+               minusLife()
                 updateScoreAndLives()
+                if (getLife() < 1){
+                    lossThheGame()
+                }
                 hideGuesseUI()
-                //binding.editTextTextPersonName.visibility =View.GONE
                 rotationTheWheel()
 
             }
             "extra turn" -> {
                 //In the event of “extra turn” being shown, the user is given an extra life.
                 Toast.makeText(activity, "You got an extra life", LENGTH_SHORT).show()
-                setLife(getLife()+1)
+                plusLife()
                 updateScoreAndLives()
             }
 
@@ -310,7 +306,7 @@ class Gamelogic : Fragment() {
         var i = 0
         var text: String? = null
         var score : String? = null
-       // val scores: TextView = findViewById(R.id.scoreinput)
+
         do {
             // start and end of each sector on the wheel
             val start: Float = HALF_SECTOR * (i * 2 + 1)

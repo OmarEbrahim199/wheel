@@ -8,7 +8,7 @@ val sectors = arrayOf(
 )
 
 private var Sectors  : String = ""
-private var lives = 0
+var lives = 0
 var scores = 0
 
 fun getSectors(): String {
@@ -28,13 +28,13 @@ fun getLife() : Int{
 }
 fun plusLife(){
   // lives = life
-   lives ++
+   lives +=1
 
 }
 
 fun minusLife(){
    // lives = life
-    lives --
+    lives -=1
 }
 
 fun setScore(score: Int){
@@ -71,16 +71,18 @@ var messages: String = ""
 
 
 private val MyRandomWord = listOf(
-    "OMAR","EBRAHIM","HI","MAR"
+    "RED","BLUE","ORANGE","BLACK","GREEN","BROWN","YELLOW"
 )
 
 private val MyRandomScore = listOf(
+
+
     1000,500,3000,2000,1500,2500
 )
 
 fun getARandomWord(): String {
 
-    var rnds = (0..3).random()
+    var rnds = (0..6).random()
     randomWord = MyRandomWord.get(rnds)
     return randomWord
 }
@@ -109,6 +111,7 @@ fun hiddenWord(): String {
 
 
 fun updateHiddenWord(): String{
+
     for (i in randomWord.indices){
         if(randomWord.get(i) == myLetter.get(0) && hiddenWordArrays[i] == "#"){
             hiddenWordArrays[i] = myLetter.get(0).toString()

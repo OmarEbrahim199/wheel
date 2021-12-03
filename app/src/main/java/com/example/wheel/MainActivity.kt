@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
 
             data.add(randomWords(hiddenWord()))
-            data.add(randomWords("omar"))
+            data.add(randomWords(""))
 
             // This will pass the ArrayList to our Adapter
             val adapter = CustomAdapter(data,null,)
