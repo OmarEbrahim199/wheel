@@ -27,13 +27,11 @@ fun getLife() : Int{
     return lives
 }
 fun plusLife(){
-  // lives = life
    lives +=1
 
 }
 
 fun minusLife(){
-   // lives = life
     lives -=1
 }
 

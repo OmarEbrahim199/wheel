@@ -25,7 +25,7 @@ class InitializationActivity : AppCompatActivity() {
         rotatLogo()
         handler = Handler()
         handler!!.postDelayed(Runnable {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, info::class.java)
             startActivity(intent)
             finish()
 

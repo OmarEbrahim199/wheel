@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils
 import androidx.navigation.fragment.findNavController
 import com.example.wheel.Model.*
 import com.example.wheel.R
-import com.example.wheel.databinding.FragmentLossBinding
+
 import com.example.wheel.databinding.FragmentWinBinding
 
 class WinFragment : Fragment() {

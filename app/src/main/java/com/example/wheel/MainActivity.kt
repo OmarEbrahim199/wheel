@@ -42,12 +42,12 @@ class MainActivity : AppCompatActivity() {
             // this creates a vertical layout Manager
             recyclerview.layoutManager = LinearLayoutManager(this@MainActivity)
 
-            // ArrayList of class ItemsViewModel
+            // ArrayList
             val data = ArrayList<randomWords>()
 
 
             data.add(randomWords(hiddenWord()))
-            data.add(randomWords(""))
+
 
             // This will pass the ArrayList to our Adapter
             val adapter = CustomAdapter(data,null,)

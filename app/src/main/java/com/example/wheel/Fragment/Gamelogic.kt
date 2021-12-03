@@ -3,6 +3,7 @@ package com.example.wheel.Fragment
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
+import android.text.style.UpdateAppearance
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -305,43 +306,35 @@ class Gamelogic : Fragment() {
     private fun getSector(degrees: Int): String? {
         var i = 0
         var text: String? = null
-        var score : String? = null
+      //  var score : String? = null
 
         do {
             // start and end of each sector on the wheel
             val start: Float = HALF_SECTOR * (i * 2 + 1)
             val end: Float = HALF_SECTOR * (i * 2 + 3)
             if (degrees >= start && degrees < end) {
-                // degrees is in [start;end[
-                // so text is equals to sectors[i];
                 text = sectors.get(i)
-                score = sectorsint.get(i)
+               // score = sectorsint.get(i)
 
             }
             i++
             // now we can test our Android Roulette Game :)
             // That's all !
-        } while (text == null && score == null && i < sectors.size)
-
-
-      //  val myStringNumber: String = score.toString()
-        //val number: Int = myStringNumber.toInt()
+        } while (text == null && i < sectors.size)
+        // && score == null
 
         binding.apply {
-           //setScore(getScore() +number)
 
+            updateScoreAndLives()
 
-            if (score!=null){
+           /* if (score!=null){
                 (score.toString()).toInt()
                 updateScore(getScore() + (score.toString()).toInt())
             }else {
                 score = 1.toString()
                 updateScore(getScore() + (score.toString()).toInt())
             }
-
-
-
-           // scoreinput.text = (getScore()).toString()
+            */
             scoreinput.text = "Score: ${getScore()}"
 
 
